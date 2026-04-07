@@ -1,0 +1,103 @@
+.architecture-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.tech-grid {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.tech-card {
+  padding: 3.5rem 2rem;
+  width: 350px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tech-icon {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+  transition: all 0.3s ease;
+}
+
+.tech-card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.tech-card p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.postgres-card:hover {
+  border-color: rgba(51, 103, 145, 0.8);
+  box-shadow: 0 8px 40px rgba(51, 103, 145, 0.3);
+}
+
+.postgres-card:hover .tech-icon {
+  color: #336791;
+  filter: drop-shadow(0 0 20px #336791);
+}
+
+.node-card:hover {
+  border-color: rgba(83, 158, 67, 0.8);
+  box-shadow: 0 8px 40px rgba(83, 158, 67, 0.3);
+}
+
+.node-card:hover .tech-icon {
+  color: #539E43;
+  filter: drop-shadow(0 0 20px #539E43);
+}
+
+.data-pulse-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(51, 103, 145, 0.8) 0%, transparent 70%);
+  opacity: 0;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.postgres-card:hover .data-pulse-bg {
+  animation: pulseTech 1.5s infinite ease-out;
+}
+
+.tech-icon, .tech-card h3, .tech-card p {
+  z-index: 1;
+  position: relative;
+}
+
+@keyframes pulseTech {
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+}

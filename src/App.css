@@ -1,0 +1,54 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cinematic Ambient Orbs */
+.ambient-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.orb-1 {
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(217,35,50,0.5) 0%, rgba(0,0,0,0) 70%);
+  animation: floatOrb 25s infinite alternate ease-in-out;
+}
+
+.orb-2 {
+  bottom: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(16,24,39,0.8) 0%, rgba(0,0,0,0) 70%);
+  animation: floatOrb 30s infinite alternate-reverse ease-in-out;
+}
+
+.orb-3 {
+  top: 40%;
+  left: 30%;
+  width: 30vw;
+  height: 30vw;
+  background: radial-gradient(circle, rgba(255,51,68,0.2) 0%, rgba(0,0,0,0) 70%);
+  animation: pulseOrb 20s infinite alternate ease-in-out;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(5%, 10%); }
+}
+
+@keyframes pulseOrb {
+  0% { transform: scale(1); opacity: 0.1; }
+  100% { transform: scale(1.3); opacity: 0.4; }
+}

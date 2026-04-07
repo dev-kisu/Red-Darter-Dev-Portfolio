@@ -1,0 +1,45 @@
+.services-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.service-card {
+  padding: 3rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.service-icon {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 10px rgba(217, 35, 50, 0.4));
+}
+
+.service-card h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.service-card:hover {
+  border-color: rgba(217, 35, 50, 0.5);
+  box-shadow: 0 10px 40px rgba(217, 35, 50, 0.2);
+}

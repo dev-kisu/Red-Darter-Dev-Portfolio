@@ -1,0 +1,204 @@
+.flagship-section {
+  position: relative;
+}
+
+.flagship-container {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.flagship-content {
+  flex: 1;
+}
+
+.flagship-title {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  text-shadow: 0 0 20px rgba(217, 35, 50, 0.4);
+}
+
+.flagship-desc {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.flagship-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.flagship-features li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.feature-icon {
+  color: var(--primary-glow);
+  filter: drop-shadow(0 0 8px var(--primary-glow));
+}
+
+.flagship-visual {
+  flex: 1.2;
+  position: relative;
+  width: 100%;
+}
+
+.ghost-ui.hud-layout {
+  height: 500px;
+  display: flex;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.gui-sidebar {
+  width: 90px;
+  background: rgba(0,0,0,0.4);
+  border-right: 1px solid rgba(255,255,255,0.05);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gui-box {
+  width: 100%;
+  height: 24px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.gui-box.active {
+  background: rgba(217, 35, 50, 0.3);
+  box-shadow: 0 0 10px rgba(217, 35, 50, 0.5);
+  border: 1px solid var(--primary-color);
+}
+
+.gui-main {
+  flex: 1;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.gui-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.gui-line {
+  height: 12px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  width: 50%;
+}
+
+.gui-line.long { width: 40%; }
+
+.gui-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+}
+
+.gui-stats {
+  display: flex;
+  gap: 1.5rem;
+  z-index: 2;
+}
+
+.gui-stat-card {
+  flex: 1;
+  height: 120px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.gui-chart-container {
+  flex: 1;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.hud-grid-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 0;
+}
+
+.gui-chart {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem 2rem;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+.gui-bar {
+  flex: 1;
+  background: linear-gradient(to top, rgba(217, 35, 50, 0.2), var(--primary-glow));
+  border-radius: 4px 4px 0 0;
+  opacity: 0.9;
+  box-shadow: 0 0 20px rgba(217, 35, 50, 0.4);
+}
+
+.b1 { height: 45%; }
+.b2 { height: 75%; }
+.b3 { height: 90%; }
+.b4 { height: 55%; }
+.b5 { height: 100%; }
+
+.data-stream {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  background: rgba(255, 51, 68, 0.3);
+  filter: blur(30px);
+  transform: skewX(-20deg);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.data-stream.horizontal {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  width: 100%;
+  transform: skewY(5deg);
+  background: rgba(255, 255, 255, 0.1);
+  filter: blur(20px);
+}
+
+@media (max-width: 1024px) {
+  .flagship-container {
+    flex-direction: column;
+  }
+}

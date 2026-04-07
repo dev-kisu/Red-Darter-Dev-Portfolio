@@ -1,0 +1,35 @@
+.sticky-contact {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 100;
+}
+
+.sticky-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--primary-color);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1rem 1.8rem;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(217, 35, 50, 0.4);
+  transition: all 0.3s ease;
+}
+
+.sticky-btn:hover {
+  box-shadow: 0 10px 35px rgba(255, 51, 68, 0.6);
+  background: var(--primary-glow);
+}
+
+@media (max-width: 768px) {
+  .sticky-contact {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}

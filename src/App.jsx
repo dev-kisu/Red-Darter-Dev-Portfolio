@@ -1,12 +1,13 @@
 import React from 'react';
 import Hero from './components/Hero';
-import Services from './components/Services';
+import ServicesSection from './components/ServicesSection';
 import ArchitectureHub from './components/ArchitectureHub';
 import Flagship from './components/Flagship';
 import Timeline from './components/Timeline';
 import Enquiry from './components/Enquiry';
 import Footer from './components/Footer';
 import StickyContact from './components/StickyContact';
+import TechStack from './components/TechStack';
 import './App.css';
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
       <div className="ambient-orb orb-3"></div>
 
       <Hero />
-      <Services />
+      <TechStack />
+      <ServicesSection />
       <ArchitectureHub />
       <Flagship />
       <Timeline />

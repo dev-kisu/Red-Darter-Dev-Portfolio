@@ -1,0 +1,82 @@
+.tech-stack-section {
+  padding: 4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(10, 10, 15, 0.6);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
+
+.marquee-container {
+  display: flex;
+  white-space: nowrap;
+  gap: 3rem;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  /* Adjust timing for smoother reading */
+  animation: marquee 30s linear infinite;
+  padding-right: 3rem; /* Same as gap */
+}
+
+.tech-name {
+  color: rgba(255, 255, 255, 0.2);
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  font-style: italic;
+  letter-spacing: -0.05em;
+  transition: color 0.4s ease, text-shadow 0.4s ease, transform 0.4s ease;
+  cursor: default;
+}
+
+.tech-name:hover {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 0 20px rgba(217, 35, 50, 0.6), 0 0 40px rgba(217, 35, 50, 0.3);
+  transform: scale(1.05);
+}
+
+.dot-separator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #D92332;
+  box-shadow: 0 0 15px rgba(217, 35, 50, 0.8), 0 0 30px rgba(217, 35, 50, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.marquee-container:hover .marquee-content {
+  /* Optional: pause on hover for interactive feel */
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@media (max-width: 768px) {
+  .tech-stack-section {
+    padding: 2.5rem 0;
+  }
+  .tech-name {
+    font-size: 1.8rem;
+  }
+  .dot-separator {
+    width: 8px;
+    height: 8px;
+  }
+  .marquee-content {
+    gap: 2rem;
+    padding-right: 2rem;
+  }
+  .marquee-container {
+    gap: 2rem;
+  }
+}

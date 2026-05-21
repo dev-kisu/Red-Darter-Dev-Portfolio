@@ -1,62 +1,78 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3, LayoutDashboard, FileText } from 'lucide-react';
+import { BarChart3, LayoutDashboard, FileText, Brain, Network, Cpu } from 'lucide-react';
 import './Flagship.css';
 
 const Flagship = () => {
   return (
-    <section className="flagship-section section-padding">
-      <div className="flagship-container">
-        
+    <section id="flagship" className="flagship-section section-padding">
+      {/* SECTION HEADER */}
+      <div className="section-header-block">
+        <motion.h2 
+          className="section-title text-gradient"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          Flagship Productions
+        </motion.h2>
+        <motion.p 
+          className="section-subtitle"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Explore production-ready client applications built with bulletproof design frameworks.
+        </motion.p>
+      </div>
+
+      {/* ROW 1: Jewelry Management HUD (Text Left, Visual Right) */}
+      <div className="flagship-container row-1">
         <div className="flagship-content">
-          <motion.h2 
-            className="section-title text-gradient"
-            initial={{ opacity: 0, x: -50 }}
+          <div className="project-badge">SYSTEM // FULLSTACK</div>
+          <motion.h3 
+            className="flagship-title"
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            style={{ textAlign: 'left' }}
-          >
-            Featured Systems
-          </motion.h2>
-          <motion.h3 
-            className="flagship-title"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
           >
             Jewelry Management HUD
           </motion.h3>
           <motion.p 
             className="flagship-desc"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            A comprehensive dashboard simulating complex inventory tracking, sales analytics, and automated PDF invoicing logic. Designed for precision and speed.
+            A comprehensive, client-ready dashboard simulating inventory tracking, sales analytics, and automated PDF invoicing logic. Configured with a responsive glassmorphic bento UI for speed and high-precision stock monitoring.
           </motion.p>
 
           <ul className="flagship-features">
+            <motion.li initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }} transition={{ delay: 0.3 }}>
+              <LayoutDashboard className="feature-icon" size={20}/> 
+              <span>Real-Time Inventory Auditing // 10,000+ Items</span>
+            </motion.li>
+            <motion.li initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }} transition={{ delay: 0.4 }}>
+              <BarChart3 className="feature-icon" size={20}/> 
+              <span>Interactive Sales Graphs with Transaction History</span>
+            </motion.li>
             <motion.li initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }} transition={{ delay: 0.5 }}>
-              <LayoutDashboard className="feature-icon" size={24}/> Real-Time Inventory Tracking
-            </motion.li>
-            <motion.li initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }} transition={{ delay: 0.6 }}>
-              <BarChart3 className="feature-icon" size={24}/> Interactive Sales Analytics
-            </motion.li>
-            <motion.li initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }} transition={{ delay: 0.7 }}>
-              <FileText className="feature-icon" size={24}/> Automated PDF Invoicing Engine
+              <FileText className="feature-icon" size={20}/> 
+              <span>Automated PDF Invoicing Engine with Custom Tax Locks</span>
             </motion.li>
           </ul>
         </div>
 
         <motion.div 
           className="flagship-visual"
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.9 }}
         >
           <div className="glass-card ghost-ui hud-layout">
             <div className="gui-sidebar">
@@ -98,6 +114,96 @@ const Flagship = () => {
             </div>
           </div>
         </motion.div>
+      </div>
+
+      {/* ROW 2: Autonomous AI Cargo Router (Visual Left, Text Right) */}
+      <div className="flagship-container row-2 reverse-layout">
+        <motion.div 
+          className="flagship-visual"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.9 }}
+        >
+          {/* Holographic Cargo Neural Router Map */}
+          <div className="glass-card ghost-ui cargo-hud-layout">
+            <div className="hud-grid-overlay"></div>
+            
+            {/* Center Core Pulsing Hub */}
+            <div className="cargo-core-hub">
+              <span className="core-glow-pulse"></span>
+              <span className="core-title-label">AI_CORE</span>
+            </div>
+
+            {/* Orbiting Router Nodes */}
+            <div className="cargo-node node-a">
+              <div className="node-marker"></div>
+              <span className="node-text">ROUTE_A // OK</span>
+            </div>
+            <div className="cargo-node node-b">
+              <div className="node-marker err"></div>
+              <span className="node-text">ROUTE_B // BLOCK</span>
+            </div>
+            <div className="cargo-node node-c">
+              <div className="node-marker active-pulse"></div>
+              <span className="node-text font-accent">ROUTE_C // DETOUR</span>
+            </div>
+
+            {/* Glowing Scan Ray */}
+            <motion.div 
+              className="cargo-scan-laser"
+              animate={{ top: ['0%', '100%', '0%'] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            />
+            
+            {/* HUD Status Bar Overlay */}
+            <div className="cargo-bar-overlay">
+              <div className="overlay-left">
+                <span>SYS // ACTIVE_ROUTING</span>
+              </div>
+              <div className="overlay-right">
+                <span>CONGESTION: 12.4%</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="flagship-content">
+          <div className="project-badge">INTELLIGENCE // AI-AGENT</div>
+          <motion.h3 
+            className="flagship-title"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            Autonomous AI Cargo Router
+          </motion.h3>
+          <motion.p 
+            className="flagship-desc"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            An autonomous logistics routing dashboard executing real-time global cargo shipping calculations, container packing balance configurations, and pricing model validations using pgvector schemas and LangChain agents.
+          </motion.p>
+
+          <ul className="flagship-features">
+            <motion.li initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }} transition={{ delay: 0.3 }}>
+              <Network className="feature-icon" size={20}/> 
+              <span>Multi-Node Neural Congestion Mapping // Live Detours</span>
+            </motion.li>
+            <motion.li initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }} transition={{ delay: 0.4 }}>
+              <Cpu className="feature-icon" size={20}/> 
+              <span>Retrieval-Augmented (RAG) Price Matrix Estimator</span>
+            </motion.li>
+            <motion.li initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }} transition={{ delay: 0.5 }}>
+              <Brain className="feature-icon" size={20}/> 
+              <span>Autonomous Decision Agents Orchestrated in Sandbox</span>
+            </motion.li>
+          </ul>
+        </div>
       </div>
     </section>
   );

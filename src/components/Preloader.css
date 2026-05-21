@@ -1,0 +1,266 @@
+.preloader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: #020204;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: var(--font-heading);
+}
+
+/* Speed Lines Background */
+.speed-lines-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.speed-line {
+  position: absolute;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, rgba(217, 35, 50, 0.4), transparent);
+  opacity: 0;
+  animation: fallSpeedLine infinite linear;
+}
+
+@keyframes fallSpeedLine {
+  0% {
+    transform: translateY(-200px) scaleY(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(120vh) scaleY(2);
+    opacity: 0;
+  }
+}
+
+.preloader-content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 500px;
+}
+
+/* Jet Flight Path & Animation */
+.dart-flight-path {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.supersonic-dart-wrapper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.supersonic-dart-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+  filter: drop-shadow(0 0 15px rgba(255, 51, 68, 0.6));
+}
+
+/* Jet Thruster Exhaust Trails */
+.thruster-exhaust {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 50px;
+  background: linear-gradient(to bottom, #ff3344, transparent);
+  border-radius: 3px;
+  filter: blur(1px);
+  animation: exhaustThrust 0.15s infinite alternate ease-in-out;
+  transform-origin: top center;
+}
+
+.thruster-exhaust.side-l {
+  left: 28%;
+  height: 35px;
+  animation-delay: 0.05s;
+}
+
+.thruster-exhaust.side-r {
+  left: 72%;
+  height: 35px;
+  animation-delay: 0.1s;
+}
+
+@keyframes exhaustThrust {
+  0% { transform: translateX(-50%) scaleY(0.8) scaleX(1); opacity: 0.7; }
+  100% { transform: translateX(-50%) scaleY(1.4) scaleX(1.2); opacity: 1; }
+}
+
+/* Sonic Blast Flight Trigger */
+.supersonic-dart-wrapper.sonic-blast {
+  animation: sonicBlastForward 1s cubic-bezier(0.76, 0, 0.175, 1) forwards;
+}
+
+@keyframes sonicBlastForward {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  30% {
+    transform: scale(0.7) translate3d(0, 50px, 0);
+  }
+  100% {
+    transform: scale(5) translate3d(0, -600px, 0);
+  }
+}
+
+/* Loading Panel Design system (Editorial Brutalism) */
+.loader-tech-panel {
+  width: 100%;
+  background: rgba(15, 15, 20, 0.7);
+  border: 1px solid var(--bg-border);
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+}
+
+.blink-text {
+  animation: terminalBlink 1s infinite alternate;
+  color: var(--primary-glow);
+}
+
+@keyframes terminalBlink {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.progress-percentage {
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, #8b0000, var(--primary-glow));
+  box-shadow: 0 0 10px var(--primary-glow);
+  width: 0%;
+  transition: width 0.1s ease-out;
+}
+
+.step-text-container {
+  height: 24px;
+  overflow: hidden;
+}
+
+.step-text {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 1.5px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Sonic Shockwave & Split Screen Transitions */
+.sonic-shockwave {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid var(--primary-glow);
+  box-shadow: 0 0 30px var(--primary-glow), inset 0 0 30px var(--primary-glow);
+  z-index: 2;
+  top: 35%;
+  transform: scale(0);
+  animation: shockwaveRipple 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes shockwaveRipple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(12);
+    opacity: 0;
+    border-width: 1px;
+  }
+}
+
+/* Split Wipes (Sonic Rip) */
+.sonic-rip-upper,
+.sonic-rip-lower {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: #020204;
+  z-index: 4;
+  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.sonic-rip-upper {
+  top: 0;
+  border-bottom: 2px solid var(--primary-glow);
+  box-shadow: 0 10px 30px rgba(255, 51, 68, 0.3);
+  transform-origin: top center;
+  animation: ripOpenUpper 0.8s 0.3s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.sonic-rip-lower {
+  bottom: 0;
+  border-top: 2px solid var(--primary-glow);
+  box-shadow: 0 -10px 30px rgba(255, 51, 68, 0.3);
+  transform-origin: bottom center;
+  animation: ripOpenLower 0.8s 0.3s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes ripOpenUpper {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+@keyframes ripOpenLower {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}

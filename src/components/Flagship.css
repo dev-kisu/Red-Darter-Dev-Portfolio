@@ -202,3 +202,173 @@
     flex-direction: column;
   }
 }
+
+/* SECTION HEADER BLOCK */
+.section-header-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+/* DUAL ROW SYSTEMS LAYOUT */
+.flagship-container.row-2 {
+  margin-top: 8rem;
+}
+
+@media (min-width: 1024px) {
+  .reverse-layout {
+    flex-direction: row-reverse !important;
+  }
+}
+
+.project-badge {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: var(--primary-glow);
+  background: rgba(217, 35, 50, 0.08);
+  border: 1px solid rgba(217, 35, 50, 0.15);
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0 10px rgba(217, 35, 50, 0.05);
+}
+
+/* Holographic Cargo Neural Router Map */
+.cargo-hud-layout {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cargo-core-hub {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.core-glow-pulse {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(217, 35, 50, 0.3);
+  box-shadow: 0 0 35px var(--primary-glow);
+  animation: pulseCore 2.2s infinite ease-in-out;
+}
+
+.core-title-label {
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  z-index: 2;
+  text-shadow: 0 0 10px rgba(0,0,0,0.9);
+}
+
+@keyframes pulseCore {
+  0%, 100% { transform: scale(0.85); opacity: 0.6; box-shadow: 0 0 25px var(--primary-glow); }
+  50% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 45px var(--primary-glow); }
+}
+
+.cargo-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 5;
+}
+
+.cargo-node.node-a {
+  top: 20%;
+  left: 20%;
+}
+
+.cargo-node.node-b {
+  bottom: 25%;
+  left: 25%;
+}
+
+.cargo-node.node-c {
+  top: 30%;
+  right: 20%;
+}
+
+.node-marker {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 10px #10B981;
+}
+
+.node-marker.err {
+  background-color: var(--primary-glow);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.node-marker.active-pulse {
+  background-color: #F59E0B;
+  box-shadow: 0 0 10px #F59E0B;
+  animation: pulseNodeMarker 1.5s infinite;
+}
+
+@keyframes pulseNodeMarker {
+  0%, 100% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+.node-text {
+  font-family: monospace;
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 1px;
+  font-weight: 700;
+  background: rgba(10, 10, 15, 0.85);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cargo-scan-laser {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--primary-glow), transparent);
+  box-shadow: 0 0 20px var(--primary-glow);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.cargo-bar-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 15, 0.85);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px;
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+  z-index: 12;
+  letter-spacing: 1px;
+}

@@ -90,7 +90,7 @@
 
 @media (min-width: 1024px) {
   .services-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -104,6 +104,83 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+}
+
+/* Sci-Fi Neon Edge Indicator */
+.card-laser-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--primary-glow), transparent);
+  transition: width 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.service-card:hover .card-laser-line {
+  width: 100%;
+}
+
+/* Card Header Telemetry Tag */
+.service-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: var(--primary-glow);
+  opacity: 0.5;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.5rem;
+  transition: opacity 0.3s ease;
+  font-weight: 700;
+}
+
+.service-card:hover .service-card-meta {
+  opacity: 0.95;
+}
+
+.meta-index {
+  color: #ffffff;
+}
+
+/* HUD Decorative Crosshair in corner */
+.card-hud-decor {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 10px;
+  height: 10px;
+  opacity: 0.15;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card-hud-decor::before,
+.card-hud-decor::after {
+  content: '';
+  position: absolute;
+  background: var(--primary-glow);
+}
+
+/* crosshair lines */
+.card-hud-decor::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.card-hud-decor::after {
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+
+.service-card:hover .card-hud-decor {
+  opacity: 0.8;
+  transform: rotate(90deg);
 }
 
 .service-card::before {
@@ -195,4 +272,37 @@
 
 .service-card:hover .explore-icon {
   transform: translateX(5px);
+}
+
+/* Sci-fi Specs Row */
+.card-specs-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  transition: opacity 0.3s ease;
+  opacity: 0.65;
+}
+
+.service-card:hover .card-specs-row {
+  opacity: 1;
+}
+
+.card-spec-tag {
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .card-spec-tag {
+  color: #ffffff;
+  border-color: rgba(217, 35, 50, 0.25);
+  background: rgba(217, 35, 50, 0.05);
+  box-shadow: 0 0 5px rgba(217, 35, 50, 0.08);
 }

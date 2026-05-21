@@ -101,3 +101,117 @@
   0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.8; }
   100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
 }
+
+/* High-Tech Telemetry specs dashboard */
+.arch-telemetry-panel {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 4rem;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(10, 10, 15, 0.45);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.telemetry-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.telemetry-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.telemetry-accent-icon {
+  color: var(--primary-glow);
+}
+
+.telemetry-tag {
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: var(--primary-glow);
+  background: rgba(217, 35, 50, 0.08);
+  border: 1px solid rgba(217, 35, 50, 0.15);
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.telemetry-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .telemetry-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.telemetry-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.col-meta-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.col-icon {
+  color: var(--primary-glow);
+}
+
+.telemetry-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  padding-bottom: 0.6rem;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
+}
+
+.stat-value {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.val-glow {
+  color: var(--primary-glow);
+  text-shadow: 0 0 8px rgba(217, 35, 50, 0.5);
+}
+
+.val-green {
+  color: #10B981;
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}

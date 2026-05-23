@@ -61,8 +61,22 @@
 }
 
 @media (max-width: 600px) {
+  .footer-section {
+    padding: 3rem 1.25rem 6.5rem; /* Safe cushion so floating contact bubble doesn't cover content */
+  }
   .footer-container {
     flex-direction: column;
     gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+  }
+  .footer-bottom {
+    font-size: 0.8rem;
+    padding-top: 2rem;
   }
 }

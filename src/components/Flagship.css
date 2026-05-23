@@ -200,6 +200,54 @@
 @media (max-width: 1024px) {
   .flagship-container {
     flex-direction: column;
+    gap: 3rem;
+  }
+}
+
+/* Mobile repairs for Bento card HUD */
+@media (max-width: 768px) {
+  .ghost-ui.hud-layout {
+    flex-direction: column;
+    height: auto;
+  }
+  .gui-sidebar {
+    display: none; /* Collapses sidebar to prioritize charts and key stats */
+  }
+  .gui-main {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+  .gui-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .gui-stat-card {
+    height: auto;
+    padding: 1.25rem;
+  }
+  .gui-chart-container {
+    height: 200px;
+  }
+  .gui-chart {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  /* Cargo connection node constraints */
+  .cargo-hud-layout {
+    height: 380px;
+  }
+  .cargo-node.node-a {
+    top: 15%;
+    left: 8%;
+  }
+  .cargo-node.node-b {
+    bottom: 20%;
+    left: 12%;
+  }
+  .cargo-node.node-c {
+    top: 25%;
+    right: 8%;
   }
 }
 
@@ -215,7 +263,13 @@
 
 /* DUAL ROW SYSTEMS LAYOUT */
 .flagship-container.row-2 {
-  margin-top: 8rem;
+  margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+  .flagship-container.row-2 {
+    margin-top: 8rem;
+  }
 }
 
 @media (min-width: 1024px) {

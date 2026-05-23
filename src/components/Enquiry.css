@@ -73,8 +73,13 @@ select.form-input option {
 @media (max-width: 600px) {
   .form-group.row {
     flex-direction: column;
+    gap: 1.2rem;
   }
   .enquiry-card {
-    padding: 2rem;
+    padding: 2rem 1.25rem;
+  }
+  .enquiry-subtitle {
+    margin-bottom: 2rem;
+    font-size: 1rem;
   }
 }

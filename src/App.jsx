@@ -10,6 +10,7 @@ import Enquiry from './components/Enquiry';
 import Footer from './components/Footer';
 import StickyContact from './components/StickyContact';
 import TechStack from './components/TechStack';
+import DarterFly from './components/DarterFly';
 import './App.css';
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
       <div className="ambient-orb orb-1"></div>
       <div className="ambient-orb orb-2"></div>
       <div className="ambient-orb orb-3"></div>
+
+      {/* Cyber Flying Darters Swarm */}
+      <DarterFly />
 
       <AnimatePresence>
         {!isLoading && (
